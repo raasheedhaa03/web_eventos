@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% if messages %}
+    <div class="alert alert-info">
+
+            {% for message in messages %}
+              <h6>  {{ message }}</h6>
+            {% endfor %}
+
+    </div>
+{% endif %}
+    <form action="/signup" method="POST">
+      {% csrf_token %}
+    Name:<input type="text" name="name" required><br>
+    Reg_no:<input type="text" name="regno" required><br>
+    email:<input type="email" name="email" required><br>
+    dept:<input type="email" name="dept" required><br>
+    ph_no:<input type="email" name="ph_no" required><br>
+    password:<input type="password" name="password" required><br>
+    confirm passowrd:<input type="password" name="confpassword" required><br>
+    <input type="submit">
+    </form>
+
+  </body>
+</html>
